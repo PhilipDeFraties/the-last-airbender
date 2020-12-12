@@ -10,8 +10,11 @@ RSpec.describe 'Search for members of a nation in ATLA' do
           click_on 'Search For Members'
         end
         it "I am redirected to a results page where I see number of results" do
-          
+          expect(current_path).to eq('/search')
 
+          expect(page).to have_css('ul', :count => 97)
+          expect(page).to have_content('Number of results: 97')
+          save_and_open_page
         end
 
         it "I see a list of detailed info for each result" do

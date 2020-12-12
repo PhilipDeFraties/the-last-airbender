@@ -1,0 +1,17 @@
+<H1>Search Results</H1>
+<section id='characters'>
+  Number of results: <%= @characters.count %>
+  <section class='grid-container'>
+    <% @characters.each do |character| %>
+    <section class='grid-character' id='character-<%= character[:name] %>'>
+      <ul>
+        <li class="name">Name: <%= character.name %></li>
+        <li class="allies">Allies: <%= character.allies %></li>
+        <li class="enemies">Enemies: <%= character.enemies %></li>
+        <li class="affiliations">Affiliations: <%= character.affiliations %></li>
+        <li class="photo">Photo: <%= character.photo %></li>
+      </ul>
+    </section>
+    <% end %>
+  </section>
+</section>
